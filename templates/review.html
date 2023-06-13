@@ -1,0 +1,55 @@
+<html>
+<head>
+    <title>Review</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://images6.alphacoders.com/100/1002209.jpg');
+            background-size: cover;
+            text-align: center;
+            padding-top: 100px;
+        }
+        
+        h1 {
+            color: #ffffff;
+        }
+        
+        p {
+            color: #ffffff;
+            margin-top: 20px;
+        }
+        
+        .btn {
+            padding: 10px 20px;
+            background-color: #337ab7;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        
+        .btn:hover {
+            background-color: #23527c;
+        }
+    </style>
+</head>
+<body>
+    <h1>Review</h1>
+    <p>Rate your experience:</p>
+    
+    <!-- Add your review scale or form elements here -->
+    <!-- For example, if you have a scale from 1 to 5: -->
+    <form action="{{ url_for('review') }}" method="POST">
+        <select name="rating">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        
+        <p>Thank you for your review!</p>
+        <button class="btn" type="submit">Submit</button>
+        <input type="hidden" name="recipe_name" value="{{ recipe_name }}">
+    </form>
+</body>
+</html>

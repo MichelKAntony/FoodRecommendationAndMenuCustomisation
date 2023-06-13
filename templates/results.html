@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recipe Recommendations</title>
+    <style>
+        :root {
+            --list-color: #ecf0f3; /* Define the color for the list */
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            padding: 20px;
+            background-image: url('https://wallpaperaccess.com/full/2975577.jpg');
+            background-size: cover;
+
+        }
+
+        h1 {
+            color: #f2f2fa;
+            text-transform: uppercase;
+            margin-top: 10px;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            columns: 5; /* Adjust the number of columns as needed */
+            column-gap: 10px; /* Adjust the gap between columns as needed */
+            column-rule: 1px solid transparent;
+        }
+
+        li {
+            position: relative;
+            margin-bottom: 10px;
+            padding-left: 20px;
+        }
+
+        li::before {
+            content: "\2022"; /* Use the bullet character as the list style type */
+            position: absolute;
+            left: 0;
+            color: var(--list-color); /* Use the CSS variable for the color */
+        }
+
+        a {
+            color: var(--list-color); /* Use the CSS variable for the color */
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        p {
+            color: var(--list-color); /* Use the CSS variable for the color */
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+    <h1>Recipe Recommendations</h1>
+    {% if recommendations %}
+        <ul>
+            {% for recommendation in recommendations %}
+                <li><a href="{{ url_for('recipe', recipe_name=recommendation) }}">{{ recommendation }}</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No recommendations found.</p>
+    {% endif %}
+</body>
+</html>
+

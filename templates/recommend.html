@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recipe Search</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif; 
+            position: relative;
+            background-image: url('https://wallpaperaccess.com/full/2975577.jpg');
+            background-size: cover;
+        }
+
+        .box {
+            background-color: #fff;
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.2);
+            margin-top: 100px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            padding: 20px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        select {
+            width: 100%;
+            padding: 5px;
+        }
+
+        input[type="submit"] {
+            display: block;
+            margin-top: 20px;
+            width: 100%;
+            padding: 10px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <form action="/search" method="get">
+            <h1>What Are Your Preferences?</h1>
+            <div class='properties'>
+                <label for="flavor_profile">Flavor Profile:</label>
+                <select id="flavor_profile" name="flavor_profile">
+                    <option value="sweet">Sweet</option>
+                    <option value="spicy">Spicy</option>
+                    <option value="sour">Sour</option>
+                    <option value="bitter">Bitter</option>
+                </select>
+            </div>
+            <br>
+            <div class='properties'>
+                <label for="course">Course:</label>
+                <select id="course" name="course">
+                    <option value="starter">Starter</option>
+                    <option value="main course">Main Course</option>
+                    <option value="snack">Snack</option>
+                    <option value="dessert">Dessert</option>
+                </select>
+            </div>
+            <br>
+            <div class='properties'>
+                <label for="diet">Diet:</label>
+                <select id="diet" name="diet">
+                    <option value="Non vegetarian">Non vegetarian</option>
+                    <option value="vegetarian">Vegetarian</option>
+                </select>
+            </div>
+            <br>
+            <input type="submit" value="Search">
+        </form>
+    </div>
+</body>
+</html>
